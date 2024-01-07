@@ -9,7 +9,13 @@ export const metadata = {
 export default function layout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body
+        style={{
+          backgroundImage: `url(https://images.pexels.com/photos/1477156/pexels-photo-1477156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div id="back-drop"></div>
         {children}
       </body>
