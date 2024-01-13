@@ -1,17 +1,17 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Backdrop from "./Backdrop";
 
 const Modal = ({ backdrop, modal, reset, children, variants }) => {
-  //   useEffect(() => {
-  //     const rootElement = document.getElementById("root");
-  //     rootElement?.classList.add("no-scroll");
+  useEffect(() => {
+    const rootElement = document.getElementById("root");
+    rootElement?.classList.add("no-scroll");
 
-  //     return () => {
-  //       //Cleanup function will run when component unmount.
-  //       rootElement?.classList.remove("no-scroll");
-  //     };
-  //   }, []); // Empty dependency array to run the effect only once
+    return () => {
+      //Cleanup function will run when component unmount.
+      rootElement?.classList.remove("no-scroll");
+    };
+  }, []); // Empty dependency array to run the effect only once
 
   return (
     <>

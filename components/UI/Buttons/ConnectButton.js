@@ -10,6 +10,7 @@ export const ConnectButton = () => {
     <motion.button
       whileHover="hover"
       whileTap="tap"
+      transition={{ type: "spring", stiffness: 400 }}
       variants={buttonVar}
       className={`px-4 py-1 rounded-full border-[0.5px] border-blue-400 bg-gradient-to-r from-sky-600  to-blue-800 hover:to-sky-600 hover:shadow-md`}
     >

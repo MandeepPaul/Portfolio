@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Modal from "../UI/Overlay/Modal";
 import { NavLinks } from "@/utils/NavLinks";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { GitHubIcon, LinkedInIcon } from "@/public/SVG/svg";
 
 const sidebar = {
   open: (width = 1000) => ({
-    clipPath: `circle(${width * 2 + 200}px at calc(100% - 40px) 40px)`,
+    clipPath: `circle(${width * 2 + 200}px at 40px 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -14,7 +14,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at calc(100% - 40px) 40px)",
+    clipPath: "circle(30px at 40px 40px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -29,7 +29,7 @@ const SideNav = ({ onReset }) => {
     <Modal
       variants={sidebar}
       reset={onReset}
-      modal="top-0 left-0 bg-black w-full h-full font-primaryFont flex flex-col justify-center p-4 md:w-1/2 lg:w-1/3"
+      modal="top-0 left-0 bg-black text-white w-full h-full font-primaryFont flex flex-col justify-center p-4 md:w-1/2 lg:w-1/3"
     >
       <header className=" relative">
         <h4 className="relative text-lg ">Resources</h4>
@@ -87,11 +87,11 @@ const SideNav = ({ onReset }) => {
         ))}
       </motion.nav>
 
-      <footer className="flex flex-col gap-2 items-center justify-center w-full relative">
+      <footer className="flex flex-col gap-2 items-center justify-start w-full relative">
         <hr className="border-2 border-b-white w-full" />
         <div className="flex gap-10">
-          <GitHubIcon />
-          <LinkedInIcon />
+          <GitHubIcon className="fill-white" />
+          <LinkedInIcon className="fill-white" />
         </div>
         <motion.div
           className="content-[''] bg-white h-full absolute w-full bottom-0 left-0 right-0 top-0 "

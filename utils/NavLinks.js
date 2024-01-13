@@ -9,16 +9,19 @@ export const NavLinks = [
     name: "Skills",
     links: "#Skills",
   },
-  ,
   {
     id: 3,
     name: "Work",
     links: "#Work",
   },
-  ,
   {
     id: 4,
     name: "Education",
     links: "#Education",
+  },
+  {
+    id: 5,
+    name: "Connect",
+    links: "#Connect",
   },
 ];
