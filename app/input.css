@@ -27,3 +27,10 @@
     )
     rgb(var(--background-start-rgb));
 } */
+
+.gradient-text-teal-sky {
+  background-image: linear-gradient(to right, #5cc5ea, #26837a);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block; /* Prevents line breaks */
+}

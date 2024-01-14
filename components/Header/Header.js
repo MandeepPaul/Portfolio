@@ -18,18 +18,24 @@ const Header = () => {
     const tempLink = liNode.children[1];
 
     if (originalLink && isHovering) {
-      console.log(originalLink);
-
       const enterAnimation = async () => {
         animate(originalLink, { opacity: 0, y: -24 }, { duration: 0.2 });
-        animate(tempLink, { y: -24 }, { duration: 0.2 });
+        animate(
+          tempLink,
+          { y: -24 },
+          { duration: 0.2, type: "spring", stiffness: 500, damping: 25 }
+        );
       };
       enterAnimation();
     }
 
     if (!isHovering) {
       const exitAnimation = async () => {
-        animate(originalLink, { opacity: 1, y: 0 }, { duration: 0.2 });
+        animate(
+          originalLink,
+          { opacity: 1, y: 0 },
+          { duration: 0.2, type: "spring", stiffness: 500, damping: 25 }
+        );
         animate(tempLink, { y: 0 }, { duration: 0.2 });
       };
       exitAnimation();
@@ -37,7 +43,7 @@ const Header = () => {
   };
 
   return (
-    <header className="h-18 max-w-[1440px] mx-auto flex items-center font-primaryFont text-white p-4 lg:justify-around">
+    <header className="h-18 max-w-[1440px] mx-auto flex items-center font-primaryFont text-white p-2 lg:p-4 lg:justify-around">
       <ToggleButton
         className="lg:hidden"
         onClick={() => setNavOpen(!isNavOpen)}
@@ -46,7 +52,7 @@ const Header = () => {
 
       <motion.ul
         ref={scope}
-        className="hidden bg-neutral-900 bg-opacity-80 px-5 max-h-10 border-[0.5px] border-slate-700 rounded-full lg:flex lg:items-center"
+        className="hidden bg-neutral-900 bg-opacity-70 px-5 max-h-10 border-[0.5px] border-slate-700 rounded-full lg:flex lg:items-center"
       >
         {NavLinks.map((links, index) => (
           <motion.li
@@ -55,10 +61,10 @@ const Header = () => {
             onHoverStart={() => hoverStartHandler(index, true)}
             onHoverEnd={() => hoverStartHandler(index, false)}
           >
-            <Link className="text-gray-300 " href={links.links}>
+            <Link className="text-gray-400" href={links.links}>
               {links.name}
             </Link>
-            <Link className="font-semibold" href={links.links}>
+            <Link className="font-[590]" href={links.links}>
               {links.name}
             </Link>
           </motion.li>
