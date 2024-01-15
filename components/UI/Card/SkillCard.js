@@ -14,8 +14,6 @@ const SkillCard = ({ title, svg: SVG }) => {
   const controls = useAnimationControls();
   const [isHovering, setHovering] = useState(false);
 
-  console.log(SVG);
-
   const handleHoverState = () => {
     setHovering(true);
     controls.start("open");
