@@ -4,15 +4,26 @@ import WorkCardButton from "../Buttons/WorkCardButton";
 const hoverVariant = {
   open: {
     opacity: 1,
-    y: -185,
+    y: -200,
     transition: { duration: 0.4 },
   },
   closed: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
-const WorkCard = () => {
+const WorkCard = ({
+  className,
+  imageSrc,
+  imageAlt,
+  techStack,
+  hoverText1,
+  hoverColor,
+  hoverText2,
+  projectName,
+  content,
+  liveLink,
+  codeLink,
+}) => {
   const controls = useAnimationControls();
-
   const handleHoverState = () => {
     controls.start("open");
   };
@@ -24,43 +35,41 @@ const WorkCard = () => {
     <motion.div
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
-      className="min-h-[600px] max-w-[400px] flex flex-col mx-4 p-4 bg-neutral-800 bg-opacity-60 rounded-xl space-y-4 group"
+      className={`p-4 space-y-4 max-w-[400px] flex flex-col bg-neutral-800 bg-opacity-85 rounded-xl group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img
-          src="https://img.yumpu.com/62379956/1/500x640/uber-eats-clone.jpg"
-          alt="UberEats_Logo"
-          className="w-full h-full rounded-t-lg"
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full h-[200px] rounded-t-lg object-cover"
         />
         <motion.div
           variants={hoverVariant}
           animate={controls}
-          className="absolute w-full h-[200px] bg-black rounded-t-lg flex flex-col items-center justify-center text-5xl"
+          className="absolute w-full h-[200px] bg-black rounded-t-lg flex flex-col items-start pl-10 justify-center text-5xl"
         >
-          <span>Uber</span>
-          <span className="text-green-600">Eats</span>
+          <span>{hoverText1}</span>
+          <span className={hoverColor}>{hoverText2}</span>
         </motion.div>
       </div>
 
-      <div className="flex gap-2">
-        <span className="px-4 py-1 border-neutral-700 text-neutral-400 border-[0.5px] rounded-full group-hover:text-white group-hover:border-white">
-          React
-        </span>
-        <span className="px-4 py-1 border-neutral-700 text-neutral-400 border-[0.5px] rounded-full group-hover:text-white group-hover:border-white">
-          TypeScript
-        </span>
+      <div className="flex gap-2 flex-wrap">
+        {techStack.map((item, index) => (
+          <span
+            key={index}
+            className="px-4 py-1 border-neutral-700 text-neutral-400 border-[0.5px] rounded-full group-hover:text-white group-hover:border-white"
+          >
+            {item}
+          </span>
+        ))}
       </div>
 
-      <div className="px-1 space-y-2 h-[300px] flex flex-col justify-between">
-        <h2 className="text-3xl">Uber Eats Clone</h2>
-        <p className="flex-grow">
-          Implemented restaurant listings with menus for multiple stores and
-          designed order processing functionalities for users, including order
-          history.
-        </p>
+      <div className="px-1 space-y-2 h-[300px] flex flex-col flex-grow justify-between">
+        <h2 className="text-3xl">{projectName}</h2>
+        <p className="flex-grow pt-4">{content}</p>
         <div className="flex justify-between gap-2">
-          <WorkCardButton />
-          <WorkCardButton />
+          <WorkCardButton title="Check Live" href={liveLink} />
+          <WorkCardButton title="See Code" href={codeLink} />
         </div>
       </div>
     </motion.div>

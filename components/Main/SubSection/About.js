@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="w-[350px] md:w-[700px] lg:[1000px] xl:w-[1210px] h-[200px] md:h-[400px] lg:h-[500px] mx-auto ">
+    <section
+      id="About"
+      className="w-[350px] md:w-[700px] lg:[1000px] xl:w-[1210px] h-[200px] md:h-[400px] lg:h-[500px] mx-auto "
+    >
       <RiveAssert />
     </section>
   );

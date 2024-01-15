@@ -9,7 +9,7 @@ export const metadata = {
 export default function layout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black mx-auto">
+      <body className="bg-black mx-auto max-w-[1440px]">
         <div id="back-drop"></div>
         <div id="root">{children}</div>
       </body>

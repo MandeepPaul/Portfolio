@@ -1,15 +1,16 @@
+import { LinkArrow } from "@/public/SVG/svg";
 import { motion, useAnimationControls } from "framer-motion";
 
 const hoverVariant = {
   open: {
     opacity: 1,
-    x: 125,
+    x: 165,
     transition: { duration: 0.4 },
   },
   closed: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
 
-const WorkCardButton = () => {
+const WorkCardButton = ({ href, title }) => {
   const controls = useAnimationControls();
 
   const handleHoverState = () => {
@@ -19,18 +20,21 @@ const WorkCardButton = () => {
     controls.start("closed");
   };
   return (
-    <motion.button
+    <motion.a
+      href={href}
+      target="_blank"
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
-      className="relative px-4 py-1 border-[0.5px] border-neutral-600 overflow-hidden"
+      className="relative px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2"
     >
-      Check Live
+      {title}
+      <LinkArrow />
       <motion.span
         variants={hoverVariant}
         animate={controls}
-        className="bg-white absolute -left-[125px] top-0 w-[115%] h-full rounded-r-full mix-blend-difference"
+        className="bg-white absolute -left-[165px] top-0 w-[120%] h-full rounded-r-full mix-blend-difference"
       />
-    </motion.button>
+    </motion.a>
   );
 };
 
