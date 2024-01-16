@@ -6,7 +6,7 @@ import Main from "@/components/Main/Main";
 
 export default function Page() {
   return (
-    <div className="h-screen">
+    <div className="mx-auto max-w-[1440px]">
       <App />
       <Header />
       <Main />

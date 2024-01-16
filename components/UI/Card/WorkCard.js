@@ -35,7 +35,10 @@ const WorkCard = ({
     <motion.div
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
-      className={`p-4 space-y-4 max-w-[400px] flex flex-col bg-neutral-800 bg-opacity-85 rounded-xl group ${className}`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+      className={`p-4 space-y-4 max-w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img

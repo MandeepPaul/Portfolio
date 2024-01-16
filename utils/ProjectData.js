@@ -12,7 +12,7 @@ export const ProjectData = [
     ],
     hoverText1: "Uber",
     hoverColor: "text-green-600",
-    hoverText2: "Eats",
+    hoverText2: "Eats Clone",
     styles: "",
     projectName: "Uber Eats Clone",
     content:
