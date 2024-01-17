@@ -14,6 +14,9 @@ module.exports = {
       },
       fontFamily: {
         primaryFont: ["Roboto", "Dosis", "Playpen Sans"],
+        headingFont: ["Montserrat Alternates", "sans-serif"],
+        headingFont2: ["Montserrat Subrayada", "sans-serif"],
+        headingFont3: ["Acme", "sans-serif"],
       },
     },
   },

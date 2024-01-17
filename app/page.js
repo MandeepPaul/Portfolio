@@ -6,8 +6,8 @@ import Main from "@/components/Main/Main";
 
 export default function Page() {
   return (
-    <div className="mx-auto max-w-[1440px]">
-      <App />
+    <div>
+      {/* <App /> */}
       <Header />
       <Main />
     </div>

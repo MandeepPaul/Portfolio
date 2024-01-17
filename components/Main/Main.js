@@ -1,3 +1,4 @@
+import Links from "./Links";
 import About from "./SubSection/About";
 import Education from "./SubSection/Education";
 import Skills from "./SubSection/Skills";
@@ -11,6 +12,7 @@ const Main = () => {
       <Work />
       <Education />
       <Work />
+      <Links />
     </main>
   );
 };

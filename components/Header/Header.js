@@ -43,7 +43,7 @@ const Header = () => {
   };
 
   return (
-    <header className="h-18 max-w-[1440px] mx-auto flex items-center font-primaryFont text-white p-2 lg:p-4 lg:justify-around">
+    <header className="z-20 bg-gradient-to-b from-black via-black to-transparent h-20 flex items-center font-primaryFont text-white p-2 lg:p-4 lg:justify-around">
       <ToggleButton
         className="lg:hidden"
         onClick={() => setNavOpen(!isNavOpen)}
