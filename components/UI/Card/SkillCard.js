@@ -1,8 +1,7 @@
-const SkillCard = ({ title, svg }) => {
+const SkillCard = ({ svg: SVG, title, className, style }) => {
   return (
-    <div className="flex flex-col items-center justify-end">
-      <span>{svg}</span>
-      {title}
+    <div style={style} className={` flex flex-col items-center ${className}`}>
+      <SVG className="h-20 w-20" />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { GitHubIcon, LinkedInIcon } from "@/public/SVG/svg";
 
 const Links = () => {
   return (
-    <ul className="flex lg:flex-col gap-5 z-20 fixed -top-3 right-3 lg:top-auto lg:right-auto lg:bottom-5 lg:left-5">
+    <ul className="flex lg:flex-col gap-5 z-20 fixed lg:bottom-5 lg:left-5">
       <li>
         <a target="_blank" href="https://www.linkedin.com/in/mndeepkumar/">
           <LinkedInIcon className="fill-white h-6 w-6 hover:fill-blue-500" />
