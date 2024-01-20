@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="About">
-      <RiveAssert />
+    <section id="About" className="h-screen">
+      <div className="h-[30%]">
+        <RiveAssert />
+      </div>
     </section>
   );
 };

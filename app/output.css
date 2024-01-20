@@ -546,6 +546,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 .fixed{
   position: fixed;
 }
@@ -755,6 +789,18 @@ video {
 
 .h-4{
   height: 1rem;
+}
+
+.h-screen{
+  height: 100vh;
+}
+
+.h-\[30\%\]{
+  height: 30%;
+}
+
+.h-\[500px\]{
+  height: 500px;
 }
 
 .max-h-10{
@@ -996,6 +1042,14 @@ video {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-y-auto{
+  overflow-y: auto;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
 }
 
 .scroll-smooth{
@@ -1679,6 +1733,10 @@ video {
 
   .lg\:max-w-\[1440px\]{
     max-width: 1440px;
+  }
+
+  .lg\:animate-none{
+    animation: none;
   }
 
   .lg\:flex-row{

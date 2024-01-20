@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 import SkillCard from "@/components/UI/Card/SkillCard";
 import Heading from "@/components/UI/Wrappers/Heading";
 import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
@@ -10,6 +11,16 @@ const Skills = () => {
   const [radius, setRadius] = useState(200);
   const angleIncrement = 31;
   let initialAngle = 0;
+
+  const [rotateValue, setRotate] = useState(0);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 1258 && latest < 2326) {
+      const rotate = ((latest - 1258) / 1068) * 360;
+      setRotate(rotate);
+    }
+  });
 
   useEffect(() => {
     const updateRadius = () => {
@@ -52,8 +63,12 @@ const Skills = () => {
               className="h-[70%] absolute top-0 left-1/2 transform -translate-x-1/2"
             />
             <div
-              style={{ height: radius, width: radius }}
-              className={`rounded-full flex items-center justify-center relative animate-spin-wheel bg-opacity-45`}
+              style={{
+                height: radius,
+                width: radius,
+                transform: `rotate(${rotateValue}deg)`,
+              }}
+              className={`rounded-full flex items-center justify-center relative animate-spin-wheel lg:animate-none`}
             >
               {SkillsArray.map((details, index) => {
                 const marginLeft = `${(radius * Math.cos(initialAngle)).toFixed(
@@ -70,7 +85,7 @@ const Skills = () => {
                     key={index}
                     {...details}
                     style={{ marginLeft, marginTop }}
-                    className={`z-10 absolute animate-spin-spokes`}
+                    className={`z-10 absolute animate-spin-spokes lg:animate-none`}
                   />
                 );
               })}
