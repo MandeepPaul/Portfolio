@@ -1,4 +1,3 @@
-import { LinkArrow } from "@/public/SVG/svg";
 import ImageCard from "./ImageCard";
 import CardDetails from "./CardDetails";
 

@@ -41,3 +41,17 @@ export const LinkArrow = ({ className }) => (
     />
   </svg>
 );
+
+export const TerminalIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="50"
+    height="50"
+    viewBox="0 0 64 64"
+    id="terminal"
+  >
+    <path d="M15.414 47.414 26.829 36 15.414 24.586l-2.828 2.828L21.171 36l-8.585 8.586z"></path>
+    <path d="M2 8v48h60V8H2zm58 46H4V18h56v36z"></path>
+  </svg>
+);

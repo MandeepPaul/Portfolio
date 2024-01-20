@@ -9,15 +9,7 @@ export const metadata = {
 export default function layout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className="bg-black mx-auto max-w-[1440px]"
-        style={{ overscrollBehavior: "none" }}
-      >
-        <div id="back-drop"></div>
-        <div id="root" className="overflow-hidden ">
-          {children}
-        </div>
-      </body>
+      <body className="bg-black w-full">{children}</body>
     </html>
   );
 }

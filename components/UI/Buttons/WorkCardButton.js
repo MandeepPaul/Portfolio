@@ -25,10 +25,10 @@ const WorkCardButton = ({ href, title }) => {
       target="_blank"
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
-      className="relative px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2"
+      className="relative px-3 md:px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2 text-sm md:text-base"
     >
       {title}
-      <LinkArrow />
+      <LinkArrow className="h-4 w-4 md:h-5 md:w-5" />
       <motion.span
         variants={hoverVariant}
         animate={controls}

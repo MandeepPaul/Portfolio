@@ -6,10 +6,14 @@ import Main from "@/components/Main/Main";
 
 export default function Page() {
   return (
-    <div>
-      {/* <App /> */}
-      <Header />
-      <Main />
-    </div>
+    <>
+      <div id="back-drop"></div>
+
+      <div id="root">
+        {/* <App /> */}
+        <Header />
+        <Main />
+      </div>
+    </>
   );
 }
