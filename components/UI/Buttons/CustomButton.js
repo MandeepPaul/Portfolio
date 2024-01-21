@@ -10,7 +10,7 @@ const hoverVariant = {
   closed: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
 
-const WorkCardButton = ({ href, title }) => {
+const CustomButton = ({ href, title = "Button", SVG, className }) => {
   const controls = useAnimationControls();
 
   const handleHoverState = () => {
@@ -25,17 +25,19 @@ const WorkCardButton = ({ href, title }) => {
       target="_blank"
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
-      className="relative px-3 md:px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2 text-sm md:text-base"
+      className={`relative px-3 md:px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2 text-sm md:text-base ${className}`}
     >
       {title}
-      <LinkArrow className="h-4 w-4 md:h-5 md:w-5" />
+      {(SVG && <SVG className="h-4 w-4 md:h-5 md:w-5" />) || (
+        <LinkArrow className="h-4 w-4 md:h-5 md:w-5" />
+      )}
       <motion.span
         variants={hoverVariant}
         animate={controls}
-        className="bg-white absolute -left-[165px] top-0 w-[120%] h-full rounded-r-full mix-blend-difference"
+        className="bg-white absolute -left-[165px] top-0 w-[120%] h-full mix-blend-difference"
       />
     </motion.a>
   );
 };
 
-export default WorkCardButton;
+export default CustomButton;

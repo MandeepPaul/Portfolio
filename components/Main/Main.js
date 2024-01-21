@@ -1,5 +1,6 @@
 import Links from "./Links";
 import About from "./SubSection/About";
+import Contact from "./SubSection/Contact";
 import Education from "./SubSection/Education";
 import Skills from "./SubSection/Skills";
 import Work from "./SubSection/Work";
@@ -11,7 +12,7 @@ const Main = () => {
       <Skills />
       <Work />
       <Education />
-      <Work />
+      <Contact />
       <Links />
     </main>
   );

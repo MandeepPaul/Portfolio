@@ -1,5 +1,5 @@
 import { motion, useAnimationControls } from "framer-motion";
-import WorkCardButton from "../Buttons/WorkCardButton";
+import WorkCardButton from "../Buttons/CustomButton";
 
 const hoverVariant = {
   open: {
