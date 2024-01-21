@@ -1,22 +1,25 @@
 import ImageCard from "./ImageCard";
 import CardDetails from "./CardDetails";
 
-const EducationCard = () => {
+const EducationCard = ({ className }) => {
   return (
-    <div className="mx-6 grid grid-cols-1 items-start gap-4 md:grid-cols-2 md:grid-flow-row">
-      <div className="md:h-full md:flex md:flex-col md:justify-between">
-        <ImageCard
-          url="https://play-lh.googleusercontent.com/oDuTGEHru1KMr3QOfQfPKgIdNnlq3WWQxpBYND23r2a7RVnS1HW0t7dyON86Vn_QhtM"
-          bgColor="bg-neutral-900"
-        />
-        <CardDetails className="mb-10 md:hidden" />
-        <ImageCard
-          url="https://www.uwinnipeg.ca/branding/images/logos/uw-logo-centre-stack-rgb-white.png"
-          bgColor="bg-neutral-900"
-        />
-        <CardDetails className="md:hidden" />
+    <div
+      className={`mx-auto grid grid-cols-1 w-[350px] md:gap-4 md:w-auto md:mx-10 md:grid-cols-2 md:grid-flow-row ${className}`}
+    >
+      <div className="h-full flex flex-col md:justify-around md:justify-self-end">
+        <div className="p-4 rounded-lg bg-neutral-950  md:w-full md:h-full mb-10 md:p-0 md:m-0 md:sticky md:top-[25dvh]">
+          <ImageCard url="/udemy-logo.png" bgColor="bg-indigo-900" />
+          <CardDetails className="mb-10 md:hidden" />
+        </div>
+        <div className="p-4 rounded-lg bg-neutral-950  md:w-full md:h-full md:p-0 md:m-0 md:flex md:flex-col md:justify-center md:sticky md:top-[25dvh]">
+          <ImageCard
+            url="https://www.uwinnipeg.ca/branding/images/logos/uw-logo-centre-stack-rgb-white.png"
+            bgColor="bg-red-800"
+          />
+          <CardDetails className="md:hidden" />
+        </div>
       </div>
-      <div className="hidden md:h-full md:flex md:flex-col md:justify-between md:space-y-4 bg-slate-950 bg-opacity-50">
+      <div className="hidden md:h-full md:flex md:flex-col md:justify-between md:space-y-4 bg-opacity-50">
         <CardDetails />
         <CardDetails />
       </div>

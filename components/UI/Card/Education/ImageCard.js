@@ -1,7 +1,7 @@
 const ImageCard = ({ url, bgColor }) => {
   return (
     <img
-      className={`sticky top-[30%] object-contain md:h-[50%] ${bgColor}`}
+      className={`rounded-lg object-contain p-10 md:rounded-none md:h-full ${bgColor}`}
       src={url}
     />
   );

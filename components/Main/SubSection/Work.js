@@ -17,7 +17,7 @@ const Work = () => {
             {...rest}
             className={`${
               index % 2 === 0 ? "md:mb-[80px]" : "md:mt-[80px]"
-            } md:mx-[15px]`}
+            } md:mx-[12px]`}
           />
         ))}
       </div>

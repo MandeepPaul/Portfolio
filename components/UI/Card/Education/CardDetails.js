@@ -1,8 +1,8 @@
 import { LinkArrow } from "@/public/SVG/svg";
 
-const CardDetails = ({ className }) => {
+const CardDetails = ({ className = "" }) => {
   return (
-    <div className={`py-4 flex flex-col gap-4 md:py-[140px] ${className}`}>
+    <div className={`p-4 flex flex-col gap-4 md:py-[140px] ${className}`}>
       <div className="flex gap-3 flex-wrap">
         {[
           "React",

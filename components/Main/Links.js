@@ -13,7 +13,7 @@ const Links = () => {
           <GitHubIcon className="fill-white h-6 w-6 hover:fill-gray-500" />
         </a>
       </li>
-      <li className="hidden lg:block bg-white lg:h-[100px] lg:mx-auto lg:w-[0.5px]" />
+      <li className="hidden lg:block bg-teal-400 lg:h-[100px] lg:mx-auto lg:w-[0.5px]" />
     </ul>
   );
 };

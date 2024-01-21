@@ -37,14 +37,14 @@ const WorkCard = ({
       onHoverEnd={handleUnhoverState}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-      className={`p-4 space-y-4 min-h-[600px] mx-4 md:max-w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl group ${className}`}
+      transition={{ duration: 0.3 }}
+      className={`p-4 space-y-4 min-h-[600px] mx-4 w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-[200px] rounded-t-lg object-cover"
+          className="w-full h-[200px] rounded-t-lg object-fit"
         />
         <motion.div
           variants={hoverVariant}

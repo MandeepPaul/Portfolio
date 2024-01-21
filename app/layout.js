@@ -9,7 +9,7 @@ export const metadata = {
 export default function layout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-black w-full">{children}</body>
+      <body className="bg-black max-w-[1440px] mx-auto">{children}</body>
     </html>
   );
 }

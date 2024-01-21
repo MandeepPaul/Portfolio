@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
+
 const Heading = ({ className = "", children }) => {
   return (
-    <h2
-      className={`text-center font-headingFont3 bg-gradient-to-b from-black via-neutral-950 to-transparent py-16 text-4xl md:text-5xl lg:text-6xl ${className}`}
+    <div
+      className={`z-20 font-headingFont3 flex pb-16 pt-8 text-2xl md:text-5xl ${className}`}
     >
-      {children}
-    </h2>
+      <motion.h2
+        initial={{ x: -20, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.2 }}
+        className="pl-4 border-teal-400 border-t-[0.5px] pt-4"
+      >
+        {children}
+      </motion.h2>
+    </div>
   );
 };
 

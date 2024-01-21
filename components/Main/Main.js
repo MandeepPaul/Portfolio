@@ -11,7 +11,7 @@ const Main = () => {
       <Skills />
       <Work />
       <Education />
-      {/* <Work /> */}
+      <Work />
       <Links />
     </main>
   );
