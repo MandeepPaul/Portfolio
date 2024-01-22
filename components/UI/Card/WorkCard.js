@@ -38,7 +38,7 @@ const WorkCard = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className={`p-4 space-y-4 min-h-[600px] mx-4 w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl group ${className}`}
+      className={`p-4 space-y-4 h-[700px] md:min-h-[600px] mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img
@@ -67,7 +67,7 @@ const WorkCard = ({
         ))}
       </div>
 
-      <div className="px-1 space-y-2 h-[300px] flex flex-col flex-grow justify-between">
+      <div className="px-1 space-y-2 h-[300px] flex flex-col flex-grow justify-between overflow-hidden">
         <h2 className="text-3xl">{projectName}</h2>
         <p className="flex-grow pt-4">{content}</p>
         <div className="flex justify-between gap-2">

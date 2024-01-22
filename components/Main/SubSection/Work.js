@@ -10,7 +10,7 @@ const Work = () => {
         Dive into the{" "}
         <span className="gradient-text-teal-sky">&#60; / projects &#62;</span>
       </Heading>
-      <div className="mx-auto grid grid-cols-1 gap-14 md:gap-0 md:grid-cols-2 md:grid-flow-row">
+      <div className="mx-auto grid grid-cols-1 gap-14 md:gap-0 lg:gap-x-12 xl:gap-x-20 md:grid-cols-2 md:grid-flow-row ">
         {ProjectData.map(({ className, ...rest }, index) => (
           <WorkCard
             key={index}

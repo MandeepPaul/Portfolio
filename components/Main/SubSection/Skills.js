@@ -26,8 +26,8 @@ const Skills = () => {
     const updateRadius = () => {
       const screenWidth = window.innerWidth;
 
-      if (screenWidth < 320) {
-        setRadius(230);
+      if (screenWidth <= 320) {
+        setRadius(180);
       } else if (screenWidth < 425) {
         setRadius(250);
       } else if (screenWidth < 768) {

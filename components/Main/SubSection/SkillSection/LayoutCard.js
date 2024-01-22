@@ -7,8 +7,8 @@ const LayoutCard = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-neutral-950 w-[300px] md:w-[350px] lg:w-[400px] m-4 p-4 border-x-[0.5px] border-teal-400 flex flex-col items-center justify-start text-center space-y-2"
+      transition={{ duration: 0.3 }}
+      className="bg-neutral-950 w-[280px] md:w-[350px] lg:w-[400px] m-4 p-4 border-x-[0.5px] border-teal-400 flex flex-col items-center justify-start text-center space-y-2"
     >
       <TerminalIcon className="fill-teal-400" />
       <>
