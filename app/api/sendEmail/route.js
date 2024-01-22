@@ -6,11 +6,19 @@ import nodemailer from "nodemailer";
 export async function POST(request) {
   const req = await request.json();
 
-  const { personName, email, subject, message } = req;
-
+  const { name, email, subject, message } = req;
   // Basic server-side validation
-  if (!personName || !email || !subject || !message) {
-    return NextResponse.json({ error: "All fields are required" });
+  const missingFields = [];
+  if (!name) missingFields.push("name");
+  if (!email) missingFields.push("email");
+  if (!subject) missingFields.push("subject");
+  if (!message) missingFields.push("message");
+
+  if (missingFields.length > 0) {
+    return NextResponse.json(
+      { error: "All fields are required", missingFields },
+      { status: 400 }
+    );
   }
 
   // Create a nodemailer transporter
@@ -33,7 +41,7 @@ export async function POST(request) {
     }, // Sender address
     to: process.env.SMTP_USER, // Receiver address
     subject: `${subject}`,
-    text: `Name: ${personName}\nEmail: ${email}\nMessage: ${message}`,
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
   try {
@@ -41,10 +49,16 @@ export async function POST(request) {
     await transporter.sendMail(mailOptions);
 
     // Respond with success
-    return NextResponse.json({ message: "Email sent successfully" });
+    return NextResponse.json(
+      { message: "Email sent successfully" },
+      { status: 200 }
+    );
   } catch (error) {
     // Respond with an error
     console.error("Error sending email:", error);
-    return NextResponse.json({ error: "Failed to send email" });
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 }
+    );
   }
 }

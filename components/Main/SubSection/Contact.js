@@ -1,5 +1,5 @@
-import { useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Heading from "@/components/UI/Wrappers/Heading";
 import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
 import Input from "@/components/UI/Input/input";
@@ -12,24 +12,35 @@ import {
 } from "@/public/SVG/svg";
 
 const Contact = () => {
+  const [invalidFields, markInvalid] = useState([]);
   const nameRef = useRef("");
   const emailRef = useRef("");
   const subjectRef = useRef("");
   const messageRef = useRef("");
 
+  useEffect(() => {}, [invalidFields]);
+
+  const getInvalidClass = (fieldName) => {
+    return invalidFields.includes(fieldName) && "border-b-4 border-red-500";
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const personName = nameRef.current.value;
+    const name = nameRef.current.value;
     const email = emailRef.current.value;
     const subject = subjectRef.current.value;
     const message = messageRef.current.value;
 
-    // Basic client-side validation
-    if (!personName || !email || !subject || !message) {
-      console.error("Please fill in all fields");
-      return;
-    }
+    const missingFields = [];
+    if (!name) missingFields.push("name");
+    if (!email) missingFields.push("email");
+    if (!subject) missingFields.push("subject");
+    if (!message) missingFields.push("message");
+
+    markInvalid([...missingFields]);
+
+    if (invalidFields.length > 0) return;
 
     // If data is valid, send it to the server
     try {
@@ -39,7 +50,7 @@ const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          personName,
+          name,
           email,
           subject,
           message,
@@ -49,13 +60,19 @@ const Contact = () => {
       if (response.ok) {
         // Email sent successfully, handle success on the client side
         console.log("Email sent successfully");
-        // nameRef.current.value = "";
-        // emailRef.current.value = "";
-        // subjectRef.current.value = "";
-        // messageRef.current.value = "";
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        subjectRef.current.value = "";
+        messageRef.current.value = "";
       } else {
-        // Handle error when sending email
-        console.error("Failed to send email");
+        const errorResponse = await response.json();
+        if (errorResponse && errorResponse.missingFields) {
+          // Handle missing fields on the client side
+          markInvalid([...errorResponse.missingFields]);
+        } else {
+          // Handle other errors when sending email
+          console.error("Failed to send email");
+        }
       }
     } catch (error) {
       console.error("Error sending email:", error);
@@ -69,30 +86,47 @@ const Contact = () => {
         <span className="gradient-text-teal-sky">&#60; / Touch &#62;</span>
       </Heading>
       <div className="h-[60vh] mx-4">
-        <form className="h-full max-w-[1024px] mx-auto flex flex-col m-2 p-2 gap-2 md:grid md:grid-rows-6 md:grid-cols-2 md:grid-flow-row md:items-start md:h-auto md:gap-3">
+        <form className="h-full max-w-[1024px] mx-auto flex flex-col m-2 p-2 gap-2 md:grid md:grid-rows-7 md:grid-cols-2 md:grid-flow-row md:items-start md:h-auto md:gap-3">
+          {invalidFields.length > 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5 }}
+              className="h-10 bg-red-500 p-2 md:col-span-2"
+            >
+              *All fields are required
+            </motion.div>
+          ) : (
+            <div className="h-10 md:col-span-2" />
+          )}
           <Input
             ref={nameRef}
-            className="grow-0"
-            name="personName"
+            className={`${getInvalidClass("name")}`}
+            name="name"
             placeholder="Name"
           />
           <Input
             ref={emailRef}
-            className="grow-0"
-            name="personEmail"
+            className={`${getInvalidClass("email")}`}
+            name="email"
             type="email"
             placeholder="Email"
           />
 
           <Input
             ref={subjectRef}
-            className="mb-1 md:mb-0 md:col-span-2 grow-0"
+            className={`mb-1 md:mb-0 md:col-span-2 ${getInvalidClass(
+              "subject"
+            )}`}
             name="subject"
             placeholder="Subject"
           />
           <textarea
             ref={messageRef}
-            className="h-[50%] bg-neutral-100 p-4 outline-none text-black md:col-span-2 md:row-span-4 md:h-full"
+            className={`h-[50%] bg-neutral-100 p-4 outline-none text-black md:col-span-2 md:row-span-4 md:h-full focus:border-b-4 focus:border-teal-600 invalid:border-b-4 invalid:border-red-600 ${getInvalidClass(
+              "message"
+            )}`}
             placeholder="Message"
           />
           <div className="flex justify-between items-center md:col-span-2">
