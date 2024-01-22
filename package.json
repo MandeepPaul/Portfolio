@@ -12,8 +12,11 @@
     "@rive-app/react-canvas": "^4.7.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.25",
+    "dotenv": "^16.3.2",
+    "express": "^4.18.2",
     "framer-motion": "^10.17.9",
     "next": "14.0.4",
+    "nodemailer": "^6.9.8",
     "react": "^18",
     "react-dom": "^18"
   },

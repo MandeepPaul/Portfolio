@@ -10,7 +10,7 @@ const hoverVariant = {
   closed: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
 
-const CustomButton = ({ href, title = "Button", SVG, className }) => {
+const CustomButton = ({ href, title = "Button", SVG, onClick, className }) => {
   const controls = useAnimationControls();
 
   const handleHoverState = () => {
@@ -19,10 +19,12 @@ const CustomButton = ({ href, title = "Button", SVG, className }) => {
   const handleUnhoverState = () => {
     controls.start("closed");
   };
+  const handleButtonClick = () => {
+    window.open(href, "_blank", "noopener noreferrer");
+  };
   return (
-    <motion.a
-      href={href}
-      target="_blank"
+    <motion.button
+      onClick={onClick || handleButtonClick}
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
       className={`relative px-3 md:px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2 text-sm md:text-base ${className}`}
@@ -36,7 +38,7 @@ const CustomButton = ({ href, title = "Button", SVG, className }) => {
         animate={controls}
         className="bg-white absolute -left-[165px] top-0 w-[120%] h-full mix-blend-difference"
       />
-    </motion.a>
+    </motion.button>
   );
 };
 

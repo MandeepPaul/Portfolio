@@ -48,7 +48,7 @@ export const SendIcon = ({ className }) => (
     fill="#FFFFFF"
     height="20"
     xmlns="http://www.w3.org/2000/svg"
-    enable-background="new 0 0 32 32"
+    enableBackground="new 0 0 32 32"
     viewBox="0 0 32 32"
     id="send"
   >
@@ -67,5 +67,30 @@ export const TerminalIcon = ({ className }) => (
   >
     <path d="M15.414 47.414 26.829 36 15.414 24.586l-2.828 2.828L21.171 36l-8.585 8.586z"></path>
     <path d="M2 8v48h60V8H2zm58 46H4V18h56v36z"></path>
+  </svg>
+);
+
+export const TwitterIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="40"
+    height="40"
+    fill="none"
+    viewBox="0 0 512 512"
+    id="twitter"
+  >
+    <g clipPath="url(#clip0_84_15698)">
+      <rect width="512" height="512" fill="#fff" rx="60"></rect>
+      <path
+        fill="#000"
+        d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z"
+      ></path>
+    </g>
+    <defs>
+      <clipPath id="clip0_84_15698">
+        <rect width="512" height="512" fill="#fff"></rect>
+      </clipPath>
+    </defs>
   </svg>
 );
