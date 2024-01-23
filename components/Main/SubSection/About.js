@@ -1,52 +1,36 @@
 import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
 import { motion } from "framer-motion";
 import CustomFloatingAnimation from "@/components/UI/Animations/CustomFloatingAnimation";
+import Content from "./AboutSection/Content";
 
 const About = () => {
   return (
-    <section id="About" className="h-screen bg-yello-600 bg-opacity-50">
-      <div className="m-4 px-2 pt-4 h-full bg-re-500 bg-opacity-50 relative">
-        <motion.p
-          className="font-headingFont3"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="text-3xl">Hey, I'm</span>
-          <br />
-          <span className="text-4xl">Mandeep</span>
-        </motion.p>
-        <motion.hr
-          initial={{ x: 25, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="my-2 w-[80px] border-t-2 border-teal-600"
-        />
-        <div>
-          <span className="font-headingFont text-lg">
-            I build things for web
-          </span>
-          <p className="my-2 text-sm">
-            As a full stack developer, I bring hands-on experience gained
-            through the successful completion of diverse projects. With a solid
-            foundation in front-end and back-end technologies.
+    <section id="About" className="h-screen">
+      <div className="m-4 px-2 pt-4 h-full relative md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 lg:mt-[100px]">
+        <div className="flex flex-col justify-between md:flex-none md:my-auto lg:col-span-2 lg:my-0 lg:flex lg:flex-col lg:justify-start">
+          <motion.p
+            className="font-headingFont3"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-3xl md:text-4xl">Hey, I'm</span>
             <br />
-            <br />I will love to hear from you. Whether It's a project, job
-            opportunity, or just a chat. Feel free to {""}
-            <a
-              href="#Connect"
-              className="underline decoration-teal-600 underline-offset-2"
-            >
-              contact me
-            </a>
-            .
-          </p>
+            <span className="text-4xl md:text-5xl">Mandeep Kumar</span>
+          </motion.p>
+          <motion.hr
+            initial={{ x: 25, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="my-2 w-[80px] border-t-2 border-teal-600"
+          />
+          <Content className="md:hidden lg:pt-8 lg:block" />
         </div>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="my-4 pt-6 flex flex-col items-center justify-between relative bg-gree-500"
+          className="my-4 pt-6 flex flex-col items-center justify-between relative md:my-0 md:pt-0 md:justify-center lg:justify-start"
         >
           <CustomFloatingAnimation rotation={3}>
             <GitHubIcon className="h-8 w-8 fill-white absolute right-0 top-4" />
@@ -61,11 +45,12 @@ const About = () => {
           </CustomFloatingAnimation>
 
           <img
-            className="h-[250px] w-[250px] bg-yello-500"
+            className="h-[250px] w-[250px] md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px]"
             src="/memoji2.png"
             alt="Profile_Pic"
           />
         </motion.div>
+        <Content className="hidden md:block md:col-span-2 lg:hidden" />
       </div>
     </section>
   );

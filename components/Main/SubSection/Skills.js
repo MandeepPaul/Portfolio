@@ -55,7 +55,7 @@ const Skills = () => {
       </Heading>
 
       <div className="mx-4 flex flex-col justify-between items-center gap-10 min-h-screen bg-opacity-45 relative lg:flex-row lg:justify-around">
-        <div className="px-10 bg-black lg:sticky lg:top-0 lg:z-10 lg:self-start lg:pt-[20vh] lg:pl-10">
+        <div className="px-10 lg:sticky lg:top-0 lg:z-10 lg:self-start lg:pt-[20vh] lg:pl-10">
           <div className="relative">
             <img
               src="/memoji.png"

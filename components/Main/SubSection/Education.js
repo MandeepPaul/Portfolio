@@ -5,7 +5,7 @@ import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
 const Education = () => {
   return (
     <SectionWrapper id="Education">
-      <Heading className="bg-gradient-to-b from-black via-black to-transparent md:sticky md:top-0">
+      <Heading className="md:sticky md:top-0">
         Schooling and{" "}
         <span className="gradient-text-teal-sky">&#60; / Beyond &#62;</span>
       </Heading>

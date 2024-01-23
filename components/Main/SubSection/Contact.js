@@ -81,7 +81,7 @@ const Contact = () => {
 
   return (
     <SectionWrapper id="Connect" className="bg-yello-600 bg-opacity-50">
-      <Heading className="bg-gradient-to-b from-black via-black to-transparent md:sticky md:top-0">
+      <Heading className="md:sticky md:top-0">
         Get In{" "}
         <span className="gradient-text-teal-sky">&#60; / Touch &#62;</span>
       </Heading>
