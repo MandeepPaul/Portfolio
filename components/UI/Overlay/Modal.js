@@ -4,7 +4,7 @@ import Backdrop from "./Backdrop";
 
 const Modal = ({ backdrop, modal, reset, children, variants }) => {
   useEffect(() => {
-    const rootElement = document.getElementById("root");
+    const rootElement = document.body;
     rootElement?.classList.add("no-scroll");
 
     return () => {

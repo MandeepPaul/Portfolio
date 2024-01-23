@@ -27,7 +27,7 @@ const Skills = () => {
       const screenWidth = window.innerWidth;
 
       if (screenWidth <= 320) {
-        setRadius(180);
+        setRadius(160);
       } else if (screenWidth < 425) {
         setRadius(250);
       } else if (screenWidth < 768) {
@@ -84,7 +84,11 @@ const Skills = () => {
                   <SkillCard
                     key={index}
                     {...details}
-                    style={{ marginLeft, marginTop }}
+                    style={{
+                      marginLeft,
+                      marginTop,
+                      transform: `rotate(-${rotateValue}deg)`,
+                    }}
                     className={`z-10 absolute animate-spin-spokes lg:animate-none`}
                   />
                 );

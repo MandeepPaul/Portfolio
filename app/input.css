@@ -10,3 +10,7 @@
   color: transparent;
   display: inline-block; /* Prevents line breaks */
 }
+
+.no-scroll {
+  overflow: hidden;
+}
