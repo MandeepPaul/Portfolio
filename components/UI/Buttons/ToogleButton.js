@@ -42,7 +42,7 @@ export const ToggleButton = ({ onClick, animate, className }) => (
           rotate: "45deg",
         },
       }}
-      className="bg-white  w-6 h-[3px]"
+      className="bg-white w-6 h-[3px]"
     />
   </motion.button>
 );

@@ -32,7 +32,7 @@ const Skills = () => {
         setRadius(250);
       } else if (screenWidth < 768) {
         setRadius(300);
-      } else if (screenWidth < 1024) {
+      } else if (screenWidth <= 1024) {
         setRadius(350);
       } else {
         setRadius(500);

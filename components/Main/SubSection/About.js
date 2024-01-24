@@ -1,12 +1,12 @@
-import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
 import { motion } from "framer-motion";
 import CustomFloatingAnimation from "@/components/UI/Animations/CustomFloatingAnimation";
 import Content from "./AboutSection/Content";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
 
 const About = () => {
   return (
     <section id="About" className="h-screen">
-      <div className="m-4 px-2 pt-4 h-full relative md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 lg:mt-[100px]">
+      <div className="m-4 px-2 pt-4 h-full relative md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 mt-[100px]">
         <div className="flex flex-col justify-between md:flex-none md:my-auto lg:col-span-2 lg:my-0 lg:flex lg:flex-col lg:justify-start">
           <motion.p
             className="font-headingFont3"

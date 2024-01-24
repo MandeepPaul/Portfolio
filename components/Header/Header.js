@@ -1,16 +1,20 @@
 import ReactDOM from "react-dom";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, useAnimate } from "framer-motion";
 
 import SideNav from "../Overlays/SideNav";
 import { NavLinks } from "@/utils/NavLinks";
 import { ToggleButton } from "../UI/Buttons/ToogleButton";
-import { ConnectButton } from "../UI/Buttons/ConnectButton";
+import { ResumeButton } from "../UI/Buttons/ResumeButton";
 
-const Header = () => {
+const Header = ({ prevScroll, latestScroll }) => {
   const [isNavOpen, setNavOpen] = useState(false);
   const [scope, animate] = useAnimate();
+  const [hidden, setHidden] = useState(false);
+
+  if (prevScroll > latestScroll && hidden) setHidden(false);
+  else if (prevScroll < latestScroll && !hidden) setHidden(true);
 
   const hoverStartHandler = (index, isHovering) => {
     const liNode = scope.current.children[index];
@@ -43,16 +47,22 @@ const Header = () => {
   };
 
   return (
-    <header className="z-20 bg-gradient-to-b from-black via-black to-transparent h-20 flex items-center font-primaryFont text-white p-2 lg:p-4 lg:justify-around">
-      <ToggleButton
-        className="lg:hidden"
-        onClick={() => setNavOpen(!isNavOpen)}
-        animate={isNavOpen ? "open" : "closed"}
-      />
+    <header
+      className={`z-30 max-w-[1440px] mx-auto bg-gradient-to-b from-black via-black to-transparent font-primaryFont h-20 text-white p-2 fixed inset-0 md:px-3 grid grid-cols-2 items-center justify-between ${
+        hidden ? "lg:grid-cols-4" : "lg:grid-cols-6"
+      }`}
+    >
+      {!hidden && (
+        <ToggleButton
+          onClick={() => setNavOpen(!isNavOpen)}
+          animate={isNavOpen ? "open" : "closed"}
+          className="col-span-1 lg:block"
+        />
+      )}
 
       <motion.ul
         ref={scope}
-        className="hidden bg-neutral-900 bg-opacity-70 px-5 max-h-10 border-[0.5px] border-slate-700 rounded-full lg:flex lg:items-center"
+        className="hidden bg-neutral-900 bg-opacity-70 px-5 max-h-10 border-[0.5px] border-slate-700 rounded-full lg:flex items-center justify-center justify-self-center mx-auto col-span-4 "
       >
         {NavLinks.map((links, index) => (
           <motion.li
@@ -71,7 +81,8 @@ const Header = () => {
         ))}
       </motion.ul>
 
-      {/* <ConnectButton /> */}
+      {!hidden && <ResumeButton className="justify-self-end mr-2" />}
+
       {isNavOpen &&
         ReactDOM.createPortal(
           <AnimatePresence>
