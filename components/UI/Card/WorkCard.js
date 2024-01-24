@@ -38,7 +38,7 @@ const WorkCard = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className={`p-4 space-y-4 h-[700px] md:min-h-[600px] mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl group ${className}`}
+      className={`p-4 space-y-4 h-[700px] md:min-h-[600px] mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl hover:border-[0.5px] hover:border-neutral-600 group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img

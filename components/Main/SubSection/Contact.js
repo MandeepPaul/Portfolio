@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Heading from "@/components/UI/Wrappers/Heading";
 import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
 import Input from "@/components/UI/Input/input";
-import WorkCardButton from "@/components/UI/Buttons/CustomButton";
+import CustomButton from "@/components/UI/Buttons/CustomButton";
 import {
   GitHubIcon,
   LinkedInIcon,
@@ -130,14 +130,20 @@ const Contact = () => {
             placeholder="Message"
           />
           <div className="flex justify-between items-center md:col-span-2">
-            <div className="flex gap-1 lg:gap-4">
-              <LinkedInIcon className="fill-white inline-block h-8 w-8" />
-              <GitHubIcon className="fill-white inline-block h-8 w-8" />
-              <TwitterIcon className="fill-white inline-block h-8 w-8" />
+            <div className="flex gap-4">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/mndeepkumar/"
+              >
+                <LinkedInIcon className="fill-white inline-block h-8 w-8 hover:fill-blue-500" />
+              </a>
+              <a target="_blank" href="https://github.com/MandeepPaul">
+                <GitHubIcon className="fill-white inline-block h-8 w-8 hover:fill-gray-500" />
+              </a>
             </div>
-            <WorkCardButton
+            <CustomButton
               onClick={handleSubmit}
-              className="min-w-[100px] border-white"
+              className="min-w-[100px] border-white no-underline"
               title="CONNECT"
               SVG={SendIcon}
             />

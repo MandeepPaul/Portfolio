@@ -11,7 +11,6 @@ export const ProjectData = [
       "TailwindCSS",
     ],
     hoverText1: "Uber",
-    hoverColor: "text-green-600",
     hoverText2: "Eats Clone",
     styles: "",
     projectName: "Uber Eats Clone",
@@ -34,7 +33,7 @@ export const ProjectData = [
     codeLink: "https://github.com/MandeepPaul/FacebookLoginPage",
   },
   {
-    imageSrc: "/meetup.jpg",
+    imageSrc: "/ProjectPic/meetup.jpg",
     imageAlt: "ReactEvents",
     techStack: [
       "Node Js",
@@ -54,7 +53,7 @@ export const ProjectData = [
       "https://github.com/MandeepPaul/Reactiverse/tree/main/react-query",
   },
   {
-    imageSrc: "/authApp.png",
+    imageSrc: "/ProjectPic/authApp.png",
     imageAlt: "React Authentication",
     techStack: [
       "Node Js",

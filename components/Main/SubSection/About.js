@@ -33,20 +33,26 @@ const About = () => {
           className="my-4 pt-6 flex flex-col items-center justify-between relative md:my-0 md:pt-0 md:justify-center lg:justify-start"
         >
           <CustomFloatingAnimation rotation={3}>
-            <GitHubIcon className="h-8 w-8 fill-white absolute right-0 top-4" />
+            <a target="_blank" href="https://github.com/MandeepPaul">
+              <GitHubIcon className="h-8 w-8 fill-white absolute right-0 top-4 hover:scale-110" />
+            </a>
           </CustomFloatingAnimation>
 
           <CustomFloatingAnimation rotation={-3}>
-            <MailIcon className="h-8 w-8 fill-white absolute right-16 top-16" />
+            <a href="#Connect">
+              <MailIcon className="h-8 w-8 absolute right-16 top-16 hover:scale-110" />
+            </a>
           </CustomFloatingAnimation>
 
           <CustomFloatingAnimation rotation={4}>
-            <LinkedInIcon className="h-8 w-8 fill-white absolute left-10 top-10" />
+            <a target="_blank" href="https://www.linkedin.com/in/mndeepkumar/">
+              <LinkedInIcon className="h-8 w-8 fill-white absolute left-10 top-10 hover:scale-110" />
+            </a>
           </CustomFloatingAnimation>
 
           <img
             className="h-[250px] w-[250px] md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px]"
-            src="/memoji2.png"
+            src="/PNG/memoji2.png"
             alt="Profile_Pic"
           />
         </motion.div>

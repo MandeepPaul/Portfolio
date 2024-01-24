@@ -58,7 +58,7 @@ const Skills = () => {
         <div className="px-10 lg:sticky lg:top-0 lg:z-10 lg:self-start lg:pt-[20vh] lg:pl-10">
           <div className="relative">
             <img
-              src="/memoji.png"
+              src="/PNG/memoji.png"
               alt="memoji"
               className="h-[70%] absolute top-0 left-1/2 transform -translate-x-1/2"
             />
