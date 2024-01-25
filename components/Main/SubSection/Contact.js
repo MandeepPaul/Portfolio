@@ -32,7 +32,7 @@ const Contact = () => {
     return () => {
       clearTimeout(identifier);
     };
-  }, [name, email, subject, message]);
+  }, [name, email, subject, message, firstSubmissionCheck]);
 
   const onChangeHandler = (event, identifier) => {
     const value = event.target.value;

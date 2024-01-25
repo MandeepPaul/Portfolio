@@ -3,6 +3,7 @@ const ImageCard = ({ url, bgColor }) => {
     <img
       className={`rounded-lg object-contain p-10 md:rounded-none md:h-full ${bgColor}`}
       src={url}
+      alt="logo"
     />
   );
 };
