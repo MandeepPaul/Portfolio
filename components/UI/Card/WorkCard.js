@@ -73,7 +73,7 @@ const WorkCard = ({
           ))}
         </ul>
         <div className="flex justify-between gap-2">
-          <WorkCardButton title="Check Live" href={liveLink} />
+          {liveLink && <WorkCardButton title="Check Live" href={liveLink} />}
           <WorkCardButton title="See Code" href={codeLink} />
         </div>
       </div>

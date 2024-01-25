@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const ToggleButton = ({ onClick, animate, className }) => (
   <motion.button
-    className={`flex flex-col gap-1 items-center justify-center bg-black h-12 w-12 rounded-full z-50 ${className}`}
+    className={`flex flex-col gap-1 relative items-center justify-center bg-black h-12 w-12 rounded-full z-30 ${className}`}
     onClick={onClick}
     animate={animate}
   >

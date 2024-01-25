@@ -19,7 +19,7 @@ const Modal = ({ backdrop, modal, reset, children, variants }) => {
 
       {/* We need to specify the position of modal first in the component where we are using this modal*/}
       <motion.div
-        className={`fixed shadow-xl z-40 ${modal}`}
+        className={`fixed shadow-xl z-30 ${modal}`}
         variants={variants}
       >
         {children}

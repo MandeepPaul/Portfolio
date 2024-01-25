@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import Modal from "../UI/Overlay/Modal";
 import { NavLinks } from "@/utils/NavLinks";
-import Link from "next/link";
-import { GitHubIcon, LinkedInIcon } from "@/public/SVG/svg";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
 
 const sidebar = {
   open: (width = 1000) => ({
@@ -25,6 +24,17 @@ const sidebar = {
 };
 
 const SideNav = ({ onReset }) => {
+  const linkClickHandler = (href) => {
+    if (
+      ["#About", "#Skills", "#Work", "#Education", "#Connect"].includes(href)
+    ) {
+      window.location.href = href;
+    } else {
+      window.open(href, "_blank");
+    }
+    onReset();
+  };
+
   return (
     <Modal
       variants={sidebar}
@@ -82,7 +92,7 @@ const SideNav = ({ onReset }) => {
             exit="closed"
             key={links.id}
           >
-            <Link href={links.links}>{links.name}</Link>
+            <a onClick={() => linkClickHandler(links.links)}>{links.name}</a>
           </motion.div>
         ))}
       </motion.nav>
@@ -90,11 +100,22 @@ const SideNav = ({ onReset }) => {
       <footer className="flex flex-col gap-2 items-center justify-start w-full relative">
         <hr className="border-2 border-b-white w-full" />
         <div className="flex gap-10">
-          <GitHubIcon className="fill-white" />
-          <LinkedInIcon className="fill-white" />
+          <a onClick={() => linkClickHandler("https://github.com/MandeepPaul")}>
+            <GitHubIcon className="h-8 w-8 fill-white" />
+          </a>
+          <a onClick={() => linkClickHandler("#Connect")}>
+            <MailIcon className="h-8 w-8" />
+          </a>
+          <a
+            onClick={() =>
+              linkClickHandler("https://www.linkedin.com/in/mndeepkumar/")
+            }
+          >
+            <LinkedInIcon className="h-8 w-8 fill-white" />
+          </a>
         </div>
         <motion.div
-          className="content-[''] bg-white h-full absolute w-full bottom-0 left-0 right-0 top-0 "
+          className="content-[''] bg-white h-full"
           variants={{
             open: {
               width: 0,
