@@ -1,4 +1,3 @@
-// CustomFloatingAnimation.js
 import { motion } from "framer-motion";
 
 const CustomFloatingAnimation = ({ rotation, children }) => {

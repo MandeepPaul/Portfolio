@@ -10,13 +10,13 @@ export const SkillsData = [
     list: [
       "HTML",
       "CSS",
-      "Javascript",
-      "Typescript",
-      "ReactJS",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
       "Redux",
       "React Router",
       "React Query",
-      "NextJS",
+      "Next.js 14",
       "TailwindCSS",
     ],
   },
@@ -26,7 +26,7 @@ export const SkillsData = [
     about:
       "I love crafting server-side solutions, turning concepts into reliable and scalable backend systems.",
     heading: "Back-end Toolbox",
-    list: ["NodeJS", "ExpressJS", "MongoDB", "PostgreSQL", "Firebase"],
+    list: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"],
   },
   {
     SVG: CollabIcon,
@@ -34,6 +34,6 @@ export const SkillsData = [
     about:
       "Mastering a variety of tools and collaborating seamlessly – Just to add perfect toppings to my skill set.",
     heading: "Toolbox",
-    list: ["Git", "GitHub", "Trello"],
+    list: ["Git", "GitHub", "Trello", "Slack"],
   },
 ];

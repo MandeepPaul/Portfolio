@@ -1,6 +1,6 @@
 export const Skills = [
   {
-    title: "Typescript",
+    title: "TypeScript",
     svg: ({ className }) => (
       <svg
         className={className}

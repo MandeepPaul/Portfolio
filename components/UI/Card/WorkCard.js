@@ -15,14 +15,12 @@ const WorkCard = ({
   imageSrc,
   imageAlt,
   techStack,
-  hoverText1,
-  hoverColor,
-  hoverText2,
-  projectName,
   content,
-  liveLink,
-  codeLink,
+  projectName,
+  ...rest
 }) => {
+  const { hoverText1, hoverText2, liveLink, codeLink } = rest;
+
   const controls = useAnimationControls();
   const handleHoverState = () => {
     controls.start("open");
@@ -38,7 +36,7 @@ const WorkCard = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className={`p-4 space-y-4 h-[700px] md:min-h-[600px] mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl hover:border-[0.5px] hover:border-neutral-600 group ${className}`}
+      className={`p-4 space-y-4 h-auto mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl hover:border-[0.5px] hover:border-neutral-600 group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img
@@ -52,7 +50,7 @@ const WorkCard = ({
           className="absolute w-full h-[200px] bg-black rounded-t-lg flex flex-col items-start pl-10 justify-center text-5xl"
         >
           <span>{hoverText1}</span>
-          <span className={hoverColor}>{hoverText2}</span>
+          <span>{hoverText2}</span>
         </motion.div>
       </div>
 
@@ -67,9 +65,13 @@ const WorkCard = ({
         ))}
       </div>
 
-      <div className="px-1 space-y-2 h-[300px] flex flex-col flex-grow justify-between overflow-hidden">
+      <div className="px-1 space-y-2 min-h-[300px] flex flex-col flex-grow justify-between overflow-hidden">
         <h2 className="text-3xl">{projectName}</h2>
-        <p className="flex-grow pt-4">{content}</p>
+        <ul className="flex-grow pt-4 pl-5 list-disc space-y-4">
+          {content.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
         <div className="flex justify-between gap-2">
           <WorkCardButton title="Check Live" href={liveLink} />
           <WorkCardButton title="See Code" href={codeLink} />
