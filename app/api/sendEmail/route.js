@@ -7,14 +7,12 @@ export async function POST(request) {
   const req = await request.json();
 
   const { name, email, subject, message } = req;
-  // Basic server-side validation
-  const missingFields = [];
-  if (!name) missingFields.push("name");
-  if (!email) missingFields.push("email");
-  if (!subject) missingFields.push("subject");
-  if (!message) missingFields.push("message");
 
-  if (missingFields.length > 0) {
+  // Basic server-side validation flag
+  let missingFields = false;
+  if (!name || !email || !subject || !message) missingFields = true;
+
+  if (missingFields) {
     return NextResponse.json(
       { error: "All fields are required", missingFields },
       { status: 400 }

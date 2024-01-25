@@ -1,49 +1,71 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Heading from "@/components/UI/Wrappers/Heading";
 import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
 import Input from "@/components/UI/Input/input";
 import CustomButton from "@/components/UI/Buttons/CustomButton";
-import {
-  GitHubIcon,
-  LinkedInIcon,
-  SendIcon,
-  TwitterIcon,
-} from "@/public/SVG/svg";
+import { GitHubIcon, LinkedInIcon, SendIcon } from "@/public/SVG/svg";
 
 const Contact = () => {
-  const [invalidFields, markInvalid] = useState([]);
-  const nameRef = useRef("");
-  const emailRef = useRef("");
-  const subjectRef = useRef("");
-  const messageRef = useRef("");
+  const [firstSubmissionCheck, setSubmissionCheck] = useState(true);
+  const [submitStatus, setSubmitStatus] = useState("idle"); //"idle", "submitting", "succeed"
 
-  useEffect(() => {}, [invalidFields]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
-  const getInvalidClass = (fieldName) => {
-    return invalidFields.includes(fieldName) && "border-b-4 border-red-500";
+  const [isFormValid, setFormValidity] = useState(true);
+  const [prevName, setPrevName] = useState("");
+
+  useEffect(() => {
+    if (firstSubmissionCheck) {
+      return;
+    }
+
+    const identifier = setTimeout(() => {
+      setFormValidity(
+        name !== "" && email !== "" && subject !== "" && message !== ""
+      );
+    }, 500);
+
+    return () => {
+      clearTimeout(identifier);
+    };
+  }, [name, email, subject, message]);
+
+  const onChangeHandler = (event, identifier) => {
+    const value = event.target.value;
+    if (identifier === "name") setName(value);
+    else if (identifier === "email") setEmail(value);
+    else if (identifier === "subject") setSubject(value);
+    else if (identifier === "message") setMessage(value);
   };
+
+  useEffect(() => {
+    if (submitStatus === "succeed") {
+      setTimeout(() => {
+        setSubmitStatus("idle");
+        setPrevName("");
+      }, 4000);
+    }
+  }, [submitStatus]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const subject = subjectRef.current.value;
-    const message = messageRef.current.value;
+    //Activating auto checker
+    setSubmissionCheck(false);
 
-    const missingFields = [];
-    if (!name) missingFields.push("name");
-    if (!email) missingFields.push("email");
-    if (!subject) missingFields.push("subject");
-    if (!message) missingFields.push("message");
+    const validCheck =
+      name !== "" && email !== "" && subject !== "" && message !== "";
+    setFormValidity(validCheck);
 
-    markInvalid([...missingFields]);
-
-    if (invalidFields.length > 0) return;
+    if (!validCheck) return;
 
     // If data is valid, send it to the server
     try {
+      setSubmitStatus("submitting");
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
@@ -59,16 +81,26 @@ const Contact = () => {
 
       if (response.ok) {
         // Email sent successfully, handle success on the client side
-        console.log("Email sent successfully");
-        nameRef.current.value = "";
-        emailRef.current.value = "";
-        subjectRef.current.value = "";
-        messageRef.current.value = "";
+        setSubmitStatus("succeed");
+
+        //Name backup for displaying message after form submission.
+        setPrevName(name);
+
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+
+        //Disabling Auto checker
+        setSubmissionCheck(true);
       } else {
         const errorResponse = await response.json();
+        setSubmitStatus("idle");
+        setFormValidity(false);
+
         if (errorResponse && errorResponse.missingFields) {
           // Handle missing fields on the client side
-          markInvalid([...errorResponse.missingFields]);
+          console.error(errorResponse);
         } else {
           // Handle other errors when sending email
           console.error("Failed to send email");
@@ -80,54 +112,59 @@ const Contact = () => {
   };
 
   return (
-    <SectionWrapper id="Connect" className="bg-yello-600 bg-opacity-50">
+    <SectionWrapper id="Connect" className="bg-opacity-50">
       <Heading>
         Get In{" "}
         <span className="gradient-text-teal-sky">&#60; / Touch &#62;</span>
       </Heading>
       <div className="h-[60vh] mx-4">
-        <form className="h-full max-w-[1024px] mx-auto flex flex-col m-2 p-2 gap-2 md:grid md:grid-rows-7 md:grid-cols-2 md:grid-flow-row md:items-start md:h-auto md:gap-3">
-          {invalidFields.length > 0 ? (
+        <form className="h-full max-w-[1024px] mx-auto m-2 p-2 gap-2 grid grid-cols-1 grid-rows-8 md:grid-rows-7 md:grid-cols-2 md:grid-flow-row md:items-start md:h-auto md:gap-3">
+          {!isFormValid || submitStatus === "succeed" ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
-              className="h-10 bg-red-500 p-2 md:col-span-2"
+              className={`row-span-2 p-2 h-auto md:row-span-1 md:h-10 md:col-span-2 ${
+                submitStatus === "succeed"
+                  ? "bg-teal-600 text:xs"
+                  : "bg-red-500"
+              }`}
             >
-              *All fields are required
+              {submitStatus === "succeed"
+                ? `Thank you ${prevName} for reaching out! We'll be in touch as soon as possible.`
+                : `*All fields are required`}
             </motion.div>
           ) : (
-            <div className="h-10 md:col-span-2" />
+            <div className="row-span-2 md:row-span-1 md:h-10 md:col-span-2" />
           )}
           <Input
-            ref={nameRef}
-            className={`${getInvalidClass("name")}`}
             name="name"
             placeholder="Name"
+            value={name}
+            onChange={(event) => onChangeHandler(event, "name")}
           />
           <Input
-            ref={emailRef}
-            className={`${getInvalidClass("email")}`}
             name="email"
             type="email"
             placeholder="Email"
+            value={email}
+            onChange={(event) => onChangeHandler(event, "email")}
           />
 
           <Input
-            ref={subjectRef}
-            className={`mb-1 md:mb-0 md:col-span-2 ${getInvalidClass(
-              "subject"
-            )}`}
+            className={`mb-1 md:mb-0 md:col-span-2`}
             name="subject"
             placeholder="Subject"
+            value={subject}
+            onChange={(event) => onChangeHandler(event, "subject")}
           />
           <textarea
-            ref={messageRef}
-            className={`h-[50%] bg-neutral-100 p-4 outline-none text-black md:col-span-2 md:row-span-4 md:h-full focus:border-b-4 focus:border-teal-600 invalid:border-b-4 invalid:border-red-600 ${getInvalidClass(
-              "message"
-            )}`}
+            className={`p-4 bg-neutral-100 outline-none text-black row-span-4 h-full md:col-span-2 focus:border-b-4 focus:border-teal-600`}
+            required={true}
             placeholder="Message"
+            value={message}
+            onChange={(event) => onChangeHandler(event, "message")}
           />
           <div className="flex justify-between items-center md:col-span-2">
             <div className="flex gap-4">
@@ -144,7 +181,10 @@ const Contact = () => {
             <CustomButton
               onClick={handleSubmit}
               className="min-w-[100px] border-white no-underline"
-              title="CONNECT"
+              title={`${
+                submitStatus === "submitting" ? "Submitting..." : "Submit"
+              }`}
+              disabled={submitStatus === "submitting"}
               SVG={SendIcon}
             />
           </div>
