@@ -16,7 +16,7 @@ const About = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-3xl md:text-4xl">Hey, I'm</span>
+            <span className="text-3xl md:text-4xl">Hey, I&apos;m</span>
             <br />
             <span className="text-4xl md:text-5xl">Mandeep Kumar</span>
           </motion.p>
