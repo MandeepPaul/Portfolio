@@ -11,7 +11,7 @@ const EducationCard = ({ className }) => {
         {EducationData.map(({ imageURL, className, ...rest }, index) => (
           <div
             key={index}
-            className="p-4 rounded-lg bg-neutral-950  md:w-full md:h-full mb-10 md:p-0 md:m-0 md:sticky md:top-[25dvh]"
+            className="p-4 rounded-lg bg-neutral-950 border-[0.5px] border-teal-800 md:border-none md:w-full md:h-full mb-10 md:p-0 md:m-0 md:sticky md:top-[25dvh]"
           >
             <ImageCard url={imageURL} className={className} />
             <CardDetails {...rest} className="mb-10 md:hidden" />

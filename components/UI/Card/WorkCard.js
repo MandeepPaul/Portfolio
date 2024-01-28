@@ -36,7 +36,7 @@ const WorkCard = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className={`p-4 space-y-4 h-auto mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl hover:border-[0.5px] hover:border-neutral-600 group ${className}`}
+      className={`p-4 space-y-4 h-auto mx-4 md:w-[350px] lg:w-[400px] flex flex-col bg-neutral-900 bg-opacity-85 rounded-xl border-[0.5px] border-neutral-600 hover:border-teal-800 group ${className}`}
     >
       <div className="relative p-1 overflow-hidden">
         <img
@@ -58,7 +58,7 @@ const WorkCard = ({
         {techStack.map((item, index) => (
           <span
             key={index}
-            className="px-4 py-1 border-neutral-700 text-neutral-400 border-[0.5px] rounded-full group-hover:text-white group-hover:border-white"
+            className="px-4 py-1 border-neutral-700 text-neutral-400 border-[0.5px] rounded-full group-hover:text-white group-hover:border-teal-800"
           >
             {item}
           </span>
