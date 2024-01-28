@@ -35,7 +35,7 @@ const CustomButton = ({
       onHoverStart={handleHoverState}
       onHoverEnd={handleUnhoverState}
       disabled={disabled}
-      className={`relative px-3 md:px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2 text-sm md:text-base disabled:cursor-not-allowed disabled:opacity-50 disabled:no-underline ${className}`}
+      className={`relative px-3 md:px-4 py-1 border-[0.5px] border-neutral-600 flex items-center justify-center gap-2 overflow-hidden cursor-pointer hover:underline underline-offset-2 text-sm md:text-base disabled:cursor-progress disabled:opacity-50 disabled:no-underline ${className}`}
     >
       {title}
 

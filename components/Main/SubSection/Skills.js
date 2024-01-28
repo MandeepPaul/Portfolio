@@ -50,8 +50,8 @@ const Skills = () => {
   return (
     <SectionWrapper id="Skills">
       <Heading>
-        My Choice{" "}
-        <span className="gradient-text-teal-sky">&#60; / Tech Stack &#62;</span>
+        My choice{" "}
+        <span className="gradient-text-teal-sky">&#60; / Tech stack &#62;</span>
       </Heading>
 
       <div className="mx-4 flex flex-col justify-between items-center gap-10 min-h-screen bg-opacity-45 relative lg:flex-row lg:justify-around">

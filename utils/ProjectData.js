@@ -1,6 +1,7 @@
 export const ProjectData = [
   {
-    imageSrc: "https://img.yumpu.com/62379956/1/500x640/uber-eats-clone.jpg",
+    imageSrc:
+      "https://images.unsplash.com/photo-1554672408-758865e7274a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "UberEats_Clone",
     techStack: [
       "Typescript",
@@ -45,7 +46,7 @@ export const ProjectData = [
   },
   {
     imageSrc:
-      "https://cdn-bpplm.nitrocdn.com/MJefRwORvlGzblepEIRIgrqQFCGliGiG/assets/static/optimized/rev-72f94ae/wp-content/uploads/2017/12/User-Authentication-Type-Email-Authentication-Process.png",
+      "https://plus.unsplash.com/premium_photo-1681487814165-018814e29155?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "User Authentication",
     techStack: ["Node.js", "Express.js", "MongoDB", "TailwindCSS"],
     hoverText1: "Facebook",
@@ -60,7 +61,8 @@ export const ProjectData = [
   },
 
   {
-    imageSrc: "/ProjectPic/authApp.png",
+    imageSrc:
+      "https://cdn.pixabay.com/photo/2018/07/12/21/32/subscribe-3534409_1280.jpg",
     imageAlt: "React Authentication",
     techStack: [
       "Node.js",
@@ -83,7 +85,7 @@ export const ProjectData = [
   },
   {
     imageSrc:
-      "https://www.uxdesigninstitute.com/blog/wp-content/uploads/2022/01/86_best_portfolios_world_collage-1.jpg",
+      "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     imageAlt: "Portfolio Website",
     techStack: ["Next.js", "TailwindCSS", "Framer Motion"],
     hoverText1: "My",

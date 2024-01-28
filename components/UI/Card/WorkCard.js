@@ -42,7 +42,7 @@ const WorkCard = ({
         <img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-[200px] rounded-t-lg object-fit"
+          className="w-full h-[200px] rounded-t-lg object-cover"
         />
         <motion.div
           variants={hoverVariant}
