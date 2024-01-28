@@ -1,7 +1,7 @@
 export const EducationData = [
   {
     imageURL: "/PNG/udemy-logo.png",
-    bgColor: "bg-indigo-900",
+    className: "bg-indigo-900",
     concepts: [
       "React",
       "React Router",
@@ -24,7 +24,7 @@ export const EducationData = [
   {
     imageURL:
       "https://www.uwinnipeg.ca/branding/images/logos/uw-logo-centre-stack-rgb-white.png",
-    bgColor: "bg-red-800",
+    className: "bg-red-800",
     concepts: [
       "Front-end",
       "Back-end with Node and Express",

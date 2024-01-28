@@ -1,7 +1,7 @@
-const ImageCard = ({ url, bgColor }) => {
+const ImageCard = ({ url, className }) => {
   return (
     <img
-      className={`rounded-lg object-contain p-10 md:rounded-none md:h-full ${bgColor}`}
+      className={`rounded-lg object-contain p-10 md:rounded-none md:h-full ${className}`}
       src={url}
       alt="logo"
     />

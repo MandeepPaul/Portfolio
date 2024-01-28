@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import SkillCard from "@/components/UI/Card/SkillCard";
 import Heading from "@/components/UI/Wrappers/Heading";
@@ -102,4 +102,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default React.memo(Skills);

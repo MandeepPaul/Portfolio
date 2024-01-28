@@ -1,3 +1,4 @@
+import React from "react";
 import EducationCard from "@/components/UI/Card/Education/EducationCard";
 import Heading from "@/components/UI/Wrappers/Heading";
 import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
@@ -14,4 +15,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default React.memo(Education);

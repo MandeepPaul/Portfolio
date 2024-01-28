@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import Links from "./Links";
 import About from "./SubSection/About";
 import Contact from "./SubSection/Contact";
@@ -26,4 +27,4 @@ const Main = ({ scrollChange }) => {
   );
 };
 
-export default Main;
+export default React.memo(Main);

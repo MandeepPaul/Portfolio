@@ -1110,6 +1110,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-red-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-20{
   --tw-bg-opacity: 0.2;
 }
@@ -1138,6 +1143,10 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.bg-none{
+  background-image: none;
+}
+
 .from-black{
   --tw-gradient-from: #000 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -1161,6 +1170,10 @@ video {
 
 .to-transparent{
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+
+.bg-auto{
+  background-size: auto;
 }
 
 .fill-teal-400{

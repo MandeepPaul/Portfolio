@@ -1,6 +1,5 @@
+import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-
 import CustomFloatingAnimation from "@/components/UI/Animations/CustomFloatingAnimation";
 import Content from "./AboutSection/Content";
 import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
@@ -52,10 +51,8 @@ const About = () => {
             </a>
           </CustomFloatingAnimation>
 
-          <Image
+          <img
             className="h-[250px] w-[250px] md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px]"
-            width={250}
-            height={250}
             src="/PNG/memoji2.png"
             alt="Profile_Pic"
             loading="eager"
@@ -68,4 +65,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default React.memo(About);

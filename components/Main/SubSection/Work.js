@@ -1,3 +1,4 @@
+import React from "react";
 import WorkCard from "@/components/UI/Card/WorkCard";
 import Heading from "@/components/UI/Wrappers/Heading";
 import SectionWrapper from "@/components/UI/Wrappers/SectionWrapper";
@@ -25,4 +26,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default React.memo(Work);

@@ -29,5 +29,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        runtime: "automatic",
+        importSource: "bgColor",
+      },
+    ],
+  ],
 };

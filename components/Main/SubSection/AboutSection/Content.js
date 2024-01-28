@@ -11,7 +11,7 @@ const Content = ({ className }) => {
         in front-end and back-end technologies.
         <br />
         <br />
-        <p>
+        <span>
           I would love to hear from you. Whether it&apos;s a project, job
           opportunity, or just a chat.{" "}
           <br className="hidden md:block lg:hidden" />
@@ -22,7 +22,7 @@ const Content = ({ className }) => {
           >
             contact me.
           </a>
-        </p>
+        </span>
       </p>
     </div>
   );
