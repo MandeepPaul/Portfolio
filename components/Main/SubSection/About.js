@@ -7,8 +7,8 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
 const About = () => {
   return (
     <section id="About" className="h-screen">
-      <div className="m-4 px-2 pt-4 h-full relative md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 mt-[100px]">
-        <div className="flex flex-col justify-between md:flex-none md:my-auto lg:col-span-2 lg:my-0 lg:flex lg:flex-col lg:justify-start">
+      <div className="m-4 px-2 pt-4 mt-[100px] h-full relative md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 lg:mt-0">
+        <div className="flex flex-col justify-between md:flex-none md:my-auto lg:col-span-2 lg:my-0 lg:flex lg:flex-col lg:justify-center">
           <motion.p
             className="font-headingFont3"
             initial={{ opacity: 0, x: -20 }}
@@ -23,7 +23,7 @@ const About = () => {
             initial={{ x: 25, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="my-2 w-[80px] border-t-2 border-teal-600"
+            className="my-2 w-[80px] border-t-2 border-teal-600 lg:mb-10"
           />
           <Content className="md:hidden lg:pt-8 lg:block" />
         </div>
@@ -31,7 +31,7 @@ const About = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="my-4 pt-6 flex flex-col items-center justify-between relative md:my-0 md:pt-0 md:justify-center lg:justify-start"
+          className="my-4 pt-6 flex flex-col items-center justify-between relative md:my-0 md:pt-0 md:justify-center lg:justify-center"
         >
           <CustomFloatingAnimation rotation={3}>
             <a target="_blank" href="https://github.com/MandeepPaul">

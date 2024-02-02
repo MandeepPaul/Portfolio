@@ -14,7 +14,8 @@ const Header = ({ prevScroll, latestScroll }) => {
   const [hidden, setHidden] = useState(false);
 
   if (prevScroll > latestScroll && hidden) setHidden(false);
-  else if (prevScroll < latestScroll && !hidden) setHidden(true);
+  else if (latestScroll > 50 && prevScroll < latestScroll && !hidden)
+    setHidden(true);
 
   const hoverStartHandler = (index, isHovering) => {
     const liNode = scope.current.children[index];
