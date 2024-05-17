@@ -22,6 +22,17 @@ export const EducationData = [
       "https://www.udemy.com/certificate/UC-3942cc44-e756-4102-98c1-2133fed8a31d/",
   },
   {
+    imageURL: "/PNG/udemy-logo.png",
+    className: "bg-indigo-950",
+    concepts: ["React Native", "Expo", "SQLite Database"],
+    title: "React Native - The Practical Guide [2024]",
+    list: [
+      "Learned React Native through various projects plus utilized React knowledge to build iOS and Android Apps inc. Push Notifications, Hooks, Redux",
+    ],
+    certLink:
+      "https://www.udemy.com/certificate/UC-f297bfe1-a9f7-45c6-84e5-0ac266ceb737/",
+  },
+  {
     imageURL:
       "https://www.uwinnipeg.ca/branding/images/logos/uw-logo-centre-stack-rgb-white.png",
     className: "bg-red-800",

@@ -67,14 +67,18 @@ const WorkCard = ({
 
       <div className="px-1 space-y-2 min-h-[300px] flex flex-col flex-grow justify-between overflow-hidden">
         <h2 className="text-3xl">{projectName}</h2>
-        <ul className="flex-grow pt-4 pl-5 list-disc space-y-4">
+        <ul className="flex-grow py-4 pl-5 list-disc space-y-4">
           {content.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
-        <div className="flex justify-between gap-2">
-          {liveLink && <WorkCardButton title="Check Live" href={liveLink} />}
-          <WorkCardButton title="See Code" href={codeLink} />
+        <div className="flex justify-between">
+          {liveLink ? (
+            <WorkCardButton title="Check Live" href={liveLink} />
+          ) : (
+            <div />
+          )}
+          {codeLink && <WorkCardButton title="See Code" href={codeLink} />}
         </div>
       </div>
     </motion.div>

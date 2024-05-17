@@ -6,7 +6,7 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from "@/public/SVG/svg";
 
 const About = () => {
   return (
-    <section id="About" className="h-screen">
+    <section id="About" className="md:h-screen">
       <div className="m-4 px-2 pt-4 mt-[100px] h-full relative md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3 lg:mt-0">
         <div className="flex flex-col justify-between md:flex-none md:my-auto lg:col-span-2 lg:my-0 lg:flex lg:flex-col lg:justify-center">
           <motion.p
