@@ -13,13 +13,13 @@ export const ProjectData = [
     hoverText1: "Freelance",
     hoverText2: "Work",
     styles: "",
-    projectName: "Charms of mehandi",
+    projectName: "Freelance Work",
     content: [
       "Collaborated with a henna artist client to address appointment management challenges, ensuring bookings within a week.",
       "Implemented a Twilio-based phone number verification system for streamlined user experience.",
       "Created a dynamic appointment scheduling system with PostgreSQL database and cronJob optimization.",
     ],
-    liveLink: "https://frontend-598i.onrender.com/",
+    liveLink: "https://charmsofmehandi.com/",
   },
   {
     imageSrc:
