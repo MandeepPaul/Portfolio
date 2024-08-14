@@ -13,13 +13,28 @@ export const ProjectData = [
     hoverText1: "Freelance",
     hoverText2: "Work",
     styles: "",
-    projectName: "Freelance Work",
+    projectName: "Freelance Work I",
     content: [
       "Collaborated with a henna artist client to address appointment management challenges, ensuring bookings within a week.",
       "Implemented a Twilio-based phone number verification system for streamlined user experience.",
       "Created a dynamic appointment scheduling system with PostgreSQL database and cronJob optimization.",
     ],
     liveLink: "https://charmsofmehandi.com/",
+  },
+  {
+    imageSrc: "/ProjectPic/progress-glass.png",
+    imageAlt: "UberEats_Clone",
+    techStack: ["Next.js", "TailwindCSS", "Framer Motion"],
+    hoverText1: "Freelance",
+    hoverText2: "Work",
+    styles: "",
+    projectName: "Freelance Work II",
+    content: [
+      "Designed and developed a website for a glass repair company.",
+      "Automated email notifications for quote requests through the website.",
+      "Implemented smooth, natural animations using Framer Motion.",
+    ],
+    liveLink: "https://progressglass.ca/",
   },
   {
     imageSrc:
@@ -65,28 +80,5 @@ export const ProjectData = [
     liveLink: "",
     codeLink:
       "https://github.com/MandeepPaul/Reactiverse/tree/main/react-query",
-  },
-  {
-    imageSrc:
-      "https://cdn.pixabay.com/photo/2018/07/12/21/32/subscribe-3534409_1280.jpg",
-    imageAlt: "React Authentication",
-    techStack: [
-      "Node.js",
-      "Express.js",
-      "React",
-      "React Router",
-      "React Query",
-      "CSS Module",
-    ],
-    hoverText1: "Stateless",
-    hoverText2: "Authentication",
-    projectName: "Stateless Auth App",
-    content: [
-      "Explored and implemented stateless authentication through tokens.",
-      "Selectively restricted certain functionalities exclusively for authenticated users.",
-    ],
-    liveLink: "",
-    codeLink:
-      "https://github.com/MandeepPaul/Reactiverse/tree/main/react-authentication",
   },
 ];

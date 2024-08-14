@@ -47,7 +47,7 @@ const WorkCard = ({
         <motion.div
           variants={hoverVariant}
           animate={controls}
-          className="absolute w-full h-[200px] bg-black rounded-t-lg flex flex-col items-start pl-10 justify-center text-5xl"
+          className="absolute w-full h-[200px] bg-black rounded-t-md flex flex-col items-start pl-10 justify-center text-5xl"
         >
           <span>{hoverText1}</span>
           <span>{hoverText2}</span>
