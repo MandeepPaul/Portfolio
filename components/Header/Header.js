@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence, useAnimate } from "framer-motion";
@@ -57,7 +56,7 @@ const Header = ({ prevScroll, latestScroll }) => {
         <ToggleButton
           onClick={() => setNavOpen(!isNavOpen)}
           animate={isNavOpen ? "open" : "closed"}
-          className="col-span-1 lg:block"
+          className="z-10 col-span-1 lg:block"
         />
       )}
 
@@ -84,15 +83,20 @@ const Header = ({ prevScroll, latestScroll }) => {
 
       {!hidden && <ResumeButton className="justify-self-end mr-2" />}
 
-      {isNavOpen &&
-        ReactDOM.createPortal(
-          <AnimatePresence>
-            <motion.nav initial="closed" animate="open" exit="closed">
+      {
+        <AnimatePresence>
+          {isNavOpen && (
+            <motion.nav
+              className="z-10"
+              initial="closed"
+              animate="open"
+              exit="closed"
+            >
               <SideNav onReset={() => setNavOpen(false)} />
             </motion.nav>
-          </AnimatePresence>,
-          document.getElementById("back-drop")
-        )}
+          )}
+        </AnimatePresence>
+      }
     </header>
   );
 };

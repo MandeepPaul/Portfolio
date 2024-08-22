@@ -15,8 +15,6 @@ export default function Page() {
 
   return (
     <>
-      <div id="back-drop"></div>
-
       <div id="root" className="relative">
         <Header prevScroll={prev} latestScroll={latest} />
         <Main scrollChange={scrollChangeHandler} />

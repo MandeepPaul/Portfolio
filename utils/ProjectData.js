@@ -30,7 +30,7 @@ export const ProjectData = [
     styles: "",
     projectName: "Freelance Work II",
     content: [
-      "Designed and developed a website for a glass repair company.",
+      "Designed and developed an aesthetically pleasing website for a glass repair company.",
       "Automated email notifications for quote requests through the website.",
       "Implemented smooth, natural animations using Framer Motion.",
     ],
@@ -48,8 +48,8 @@ export const ProjectData = [
       "Firebase",
       "TailwindCSS",
     ],
-    hoverText1: "Uber",
-    hoverText2: "Eats Clone",
+    hoverText1: "Practice",
+    hoverText2: "Project",
     styles: "",
     projectName: "Uber Eats Clone",
     content: [
@@ -70,8 +70,8 @@ export const ProjectData = [
       "React Query",
       "CSS",
     ],
-    hoverText1: "React",
-    hoverText2: "Events",
+    hoverText1: "Practice",
+    hoverText2: "Project",
     projectName: "React Events App",
     content: [
       "Built a React Events app for practical experience in React, React Router, and exploring crucial React Query concepts like caching, stale time and mutations.",
